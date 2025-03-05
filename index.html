@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Love Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffd1dc; /* Soft pink */
+            margin: 0;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        .emoji {
+            width: 250px; /* Bigger image */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .btn-container {
+            display: inline-flex;
+            gap: 20px;
+            position: relative;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .btn-yes {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-no {
+            background-color: #dc3545;
+            color: white;
+            position: relative;
+        }
+
+        .btn-no:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://mystickermania.com/cdn/stickers/cute-cats/embarrassed-mochi-peach-cat-512x512.png" alt="Cute Cat" class="emoji">
+    <div class="question">So awak merajuk lagi?</div>
+    <div class="btn-container">
+        <button class="btn btn-yes" id="btnYes">YES</button>
+        <button class="btn btn-no" id="btnNo">NO</button>
+    </div>
+</div>
+
+<script>
+    const btnNo = document.getElementById('btnNo');
+    const btnYes = document.getElementById('btnYes');
+
+    btnYes.addEventListener('click', () => {
+        alert("AWW I LOVE YOU MUAH!!");
+    });
+
+    // Button "NO" lari bila hover
+    btnNo.addEventListener('mouseover', () => {
+        const randomX = Math.random() * 200 - 100; // Hadkan pergerakan supaya tak terlalu jauh
+        const randomY = Math.random() * 100 - 50;
+        btnNo.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    });
+</script>
+
+</body>
+</html>
